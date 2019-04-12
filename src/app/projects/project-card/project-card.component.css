@@ -1,0 +1,13 @@
+.card {
+  margin: 10px 0;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.card-tools {
+  margin: 10px 0;
+}
+.card-tools span {
+  margin: 0 2px;
+}
