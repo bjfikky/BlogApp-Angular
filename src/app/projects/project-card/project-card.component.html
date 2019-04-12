@@ -1,12 +1,10 @@
 <div class="col-sm-4 col-md-3">
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">{{project.Title}}</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <div class="card-tools">
-        <span class="badge badge-pill badge-secondary">C#</span>
-        <span class="badge badge-pill badge-secondary">ASP.NET MVC</span>
-        <span class="badge badge-pill badge-secondary">Secondary</span>
+        <span class="badge badge-pill badge-secondary" *ngFor="let tool of GetTools()">{{tool}}</span>
       </div>
       <div class="footer">
         <a href="#" class="card-link">Read More</a>

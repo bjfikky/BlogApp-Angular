@@ -1,10 +1,5 @@
 <div class="projects">
   <div class="row">
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
-    <app-project-card></app-project-card>
+    <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card>
   </div>
-
 </div>
