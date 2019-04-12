@@ -13,6 +13,7 @@ import {appRoutes} from './routes';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import {ProjectService} from './_services/project.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {HttpClientModule} from '@angular/common/http';
     BlogComponent,
     ProjectsComponent,
     ContactComponent,
-    ProjectCardComponent
+    ProjectCardComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,

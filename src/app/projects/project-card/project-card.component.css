@@ -1,5 +1,10 @@
 .card {
-  margin: 10px 0;
+  width: 340px;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .footer {
   display: flex;
@@ -10,4 +15,15 @@
 }
 .card-tools span {
   margin: 0 2px;
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (-webkit-min-device-pixel-ratio: 2)
+and (orientation: portrait) {
+  .card {
+    margin: 10px 0;
+    width: 100%;
+  }
 }

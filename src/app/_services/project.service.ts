@@ -7,9 +7,15 @@ import {Project} from '../_models/project';
   providedIn: 'root'
 })
 export class ProjectService {
-  baseUrl = 'http://localhost:53974/api/projects';
+  baseUrl = 'http://localhost:53974/api/projects/';
+
   constructor(private http: HttpClient) { }
+
   getProjects(): Observable<Project[]> {
     return this.http.get<Project[]>(this.baseUrl);
+  }
+
+  getProject(id): Observable<Project> {
+    return this.http.get<Project>(this.baseUrl + id);
   }
 }

@@ -1,18 +1,21 @@
-<div class="col-sm-4 col-md-3">
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
+<div class="card h-100">
+  <div class="card-body">
+    <div>
       <h5 class="card-title">{{project.Title}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <div class="card-tools">
-        <span class="badge badge-pill badge-secondary" *ngFor="let tool of GetTools()">{{tool}}</span>
-      </div>
+      <p class="card-text">{{project.Description | slice:0:80 }} ...</p>
+    </div>
+    <div class="card-tools">
+      <span class="badge badge-pill badge-secondary" *ngFor="let tool of GetTools()">{{tool}}</span>
+    </div>
+    <div>
       <div class="footer">
-        <a href="#" class="card-link">Read More</a>
+        <a [routerLink]="['/projects', project.Id]" class="card-link">Read More</a>
         <span class="">
-          <a href="#" class="card-link"><i class="fab fa-github"></i></a>
-          <a href="#" class="card-link"><i class="fab fa-youtube"></i></a>
-        </span>
+        <a href="#" class="card-link"><i class="fab fa-github"></i></a>
+        <a href="#" class="card-link"><i class="fab fa-youtube"></i></a>
+      </span>
       </div>
     </div>
   </div>
 </div>
+
