@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Project} from '../_models/project';
+import {ProjectService} from '../_services/project.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
+  featuredProjects: Project[];
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit() {
+    this.loadFeaturedProjects();
   }
 
+  loadFeaturedProjects() {
+    this.projectService.getProjects().subscribe((projects: Project[]) => {
+      const threeProjects: Project[] = [];
+      threeProjects.push(projects.pop());
+      threeProjects.push(projects.pop());
+      threeProjects.push(projects.pop());
+      this.featuredProjects = threeProjects;
+    });
+  }
 }

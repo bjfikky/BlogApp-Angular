@@ -1,3 +1,24 @@
-<p>
-  {{project?.Title}}
-</p>
+<h2>{{project.Title}}</h2>
+<carousel *ngIf="project.Photos">
+  <slide>
+    <img src="assets/images/1.jpg" alt="first slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="assets/images/2.jpg" alt="second slide" style="display: block; width: 100%;">
+  </slide>
+  <slide>
+    <img src="assets/images/3.jpg" alt="third slide" style="display: block; width: 100%;">
+  </slide>
+</carousel>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur, consequuntur culpa dicta earum esse
+  fuga iste iure maiores nulla, repudiandae rerum, sed tempore velit voluptates. Consectetur fugiat maxime quo.</p>
+<p>Pretium quam vulputate dignissim suspendisse in. Diam in arcu cursus euismod quis viverra. Velit sed ullamcorper
+  morbi tincidunt ornare massa eget. Leo urna molestie at elementum eu facilisis sed. Sit amet cursus sit amet dictum.
+  Amet dictum sit amet justo. Viverra ipsum nunc aliquet bibendum.</p>
+<p>Facilisis leo vel fringilla est ullamcorper.
+  Auctor elit sed vulputate mi sit. Dolor magna eget est lorem ipsum dolor sit. Amet nisl suscipit adipiscing bibendum
+  est ultricies integer.</p>
+
+<h4>Technologies Used</h4>
+<ul><li *ngFor="let technology of GetTools()">{{technology}}</li></ul>
+

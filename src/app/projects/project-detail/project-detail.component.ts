@@ -17,10 +17,11 @@ export class ProjectDetailComponent implements OnInit {
   }
 
   loadUser() {
-    this.projectService.getProject(this.route.snapshot.params['id']).subscribe((project: Project) => {
-      this.project = project;
-    }, error => {
-      console.log('error retrieving project');
+    this.route.data.subscribe(data => {
+      this.project = data.project;
     });
+  }
+  GetTools(): string[]  {
+    return this.project.Tools.split(',', 3);
   }
 }

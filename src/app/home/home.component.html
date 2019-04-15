@@ -30,10 +30,17 @@
 
 <div class="section featured-project">
   <h2 class="text-center">Featured Projects</h2>
+  <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+    ut labore et dolore magna aliqua.</p>
+  <div class="projects">
+    <app-project-card class="project" *ngFor="let project of featuredProjects" [project]="project"></app-project-card>
+  </div>
 </div>
 
 <hr>
 
-<div class="section featured-blog">
-  <h2 class="text-center">Featured Blog Posts</h2>
+<div class="section featured-blog text-center">
+  <h2>Featured Blog Posts</h2>
+  <p class="lead">Lorem ipsum commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula
+    ullamcorper malesuada proin libero nunc interdum varius sit amet mattis vulputate enim nulla aliquet porttitor.</p>
 </div>

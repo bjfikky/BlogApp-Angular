@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule} from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { CarouselModule } from 'ngx-bootstrap';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -12,8 +14,9 @@ import { ContactComponent } from './contact/contact.component';
 import {appRoutes} from './routes';
 import { ProjectCardComponent } from './projects/project-card/project-card.component';
 import {ProjectService} from './_services/project.service';
-import {HttpClientModule} from '@angular/common/http';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
+import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-detail.resolver';
+
 
 
 @NgModule({
@@ -31,9 +34,10 @@ import { ProjectDetailComponent } from './projects/project-detail/project-detail
   imports: [
     BrowserModule,
     HttpClientModule,
+    CarouselModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, ProjectDetailResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
