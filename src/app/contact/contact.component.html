@@ -1,22 +1,30 @@
 <h2>Get in Touch</h2>
 <div class="contact-form col-sm-6 offset-sm-1">
-  <form action="#">
+  <form #contactForm="ngForm" (ngSubmit)="sendContactMessage()">
     <div class="form-group">
       <label for="contactName" class="">Your Name:</label>
-      <input type="text" name="name" id="contactName" class="form-control" placeholder="John Doe"/>
+      <input type="text" name="name" id="contactName" class="form-control" placeholder="John Doe" required
+             [(ngModel)]="message.Name" #contactName="ngModel"/>
+      <span class="text-danger" *ngIf="!contactName.valid &&  contactName.touched"><small>* Please enter your name</small></span>
     </div>
     <div class="form-group">
       <label for="email" class="">Your Email Address:</label>
-      <input type="text" name="email" id="email" class="form-control" placeholder="JohnDoe@email.com"/>
+      <input type="text" name="emailAddress" id="email" class="form-control" placeholder="JohnDoe@email.com" required
+             [(ngModel)]="message.EmailAddress" #contactEmail="ngModel"/>
+      <span class="text-danger" *ngIf="!contactEmail.valid &&  contactEmail.touched"><small>* Please enter your name</small></span>
     </div>
     <div class="form-group">
       <label for="subject" class="">Message Subject:</label>
-      <input type="text" name="email" id="subject" class="form-control" placeholder="Subject"/>
+      <input type="text" name="subject" id="subject" class="form-control" placeholder="Subject" required
+             [(ngModel)]="message.Subject" #contactSubject="ngModel"/>
+      <span class="text-danger" *ngIf="!contactSubject.valid &&  contactSubject.touched"><small>* Please enter your subject</small></span>
     </div>
     <div class="form-group">
       <label for="message" class="">Your Message:</label>
-      <textarea name="message" id="message" class="form-control" rows="5" placeholder="Your message here..."></textarea>
+      <textarea name="message" id="message" class="form-control" rows="5" placeholder="Your message here..." required
+                [(ngModel)]="message.Body" #contactMessage="ngModel"></textarea>
+      <span class="text-danger" *ngIf="!contactMessage.valid &&  contactMessage.touched"><small>* Please enter your message</small></span>
     </div>
-    <input type="submit" value="Send Message" class="form-control btn btn-outline-success"/>
+    <input [disabled]="!contactForm.valid" type="submit" value="Send Message" class="form-control btn btn-outline-success"/>
   </form>
 </div>

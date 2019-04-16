@@ -10,7 +10,7 @@ export class ContactService {
   baseUrl = 'http://localhost:53974/api/Contact/sendMessage/';
   constructor(private http: HttpClient) { }
 
-  sendContactMessage(message: ContactMessage): Observable<void> {
+  sendContactMessage(message: ContactMessage): Observable<void> | Observable<string> {
     return null;
   }
 }

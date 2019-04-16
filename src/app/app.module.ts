@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CarouselModule } from 'ngx-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -16,6 +17,7 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
 import {ProjectService} from './_services/project.service';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-detail.resolver';
+
 
 
 
@@ -34,6 +36,7 @@ import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-deta
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     CarouselModule.forRoot(),
     RouterModule.forRoot(appRoutes)
   ],
