@@ -9,14 +9,33 @@ import {ProjectDetailComponent} from './projects/project-detail/project-detail.c
 import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-detail.resolver';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {AuthGuard} from './_guards/auth.guard';
+import {DashProjectComponent} from './dashboard/dash-project/dash-project.component';
+import {DashOverviewComponent} from './dashboard/dash-overview/dash-overview.component';
+import {DashBlogComponent} from './dashboard/dash-blog/dash-blog.component';
+import {DashMessagesComponent} from './dashboard/dash-messages/dash-messages.component';
 
 export const appRoutes: Routes = [
+  // ANONYMOUS USER ROUTES
   {path: '', component: HomeComponent},
   {path: 'projects', component: ProjectsComponent},
   {path: 'projects/:id', component: ProjectDetailComponent, resolve: {project: ProjectDetailResolver}},
   {path: 'blog', component: BlogComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
+
+  // ADMIN ROUTES: '/Dashboard' and '/Dashboard/****'
+  {path: 'dashboard',
+    component: DashboardComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {path: '', redirectTo: 'overview', pathMatch: 'full'},
+      {path: 'projects', component: DashProjectComponent},
+      {path: 'overview', component: DashOverviewComponent},
+      {path: 'blog', component: DashBlogComponent},
+      {path: 'messages', component: DashMessagesComponent},
+    ]
+  },
+  // {path: 'dashboard/projects', component: DashProjectComponent, canActivate: [AuthGuard] },
+
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

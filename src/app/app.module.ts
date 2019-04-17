@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import {AlertModule, CarouselModule} from 'ngx-bootstrap';
+import {AlertModule, CarouselModule, TabsModule} from 'ngx-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
@@ -20,6 +20,10 @@ import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-deta
 import {AuthenticationService} from './_services/authentication.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {AuthGuard} from './_guards/auth.guard';
+import { DashProjectComponent } from './dashboard/dash-project/dash-project.component';
+import { DashOverviewComponent } from './dashboard/dash-overview/dash-overview.component';
+import { DashBlogComponent } from './dashboard/dash-blog/dash-blog.component';
+import { DashMessagesComponent } from './dashboard/dash-messages/dash-messages.component';
 
 
 @NgModule({
@@ -33,7 +37,11 @@ import {AuthGuard} from './_guards/auth.guard';
     ContactComponent,
     ProjectCardComponent,
     ProjectDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    DashProjectComponent,
+    DashOverviewComponent,
+    DashBlogComponent,
+    DashMessagesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +49,7 @@ import {AuthGuard} from './_guards/auth.guard';
     FormsModule,
     CarouselModule.forRoot(),
     AlertModule.forRoot(),
+    TabsModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
   providers: [ProjectService, AuthenticationService, ProjectDetailResolver, AuthGuard],
