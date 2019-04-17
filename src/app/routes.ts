@@ -7,6 +7,8 @@ import {BlogComponent} from './blog/blog.component';
 import {ContactComponent} from './contact/contact.component';
 import {ProjectDetailComponent} from './projects/project-detail/project-detail.component';
 import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-detail.resolver';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {AuthGuard} from './_guards/auth.guard';
 
 export const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -15,5 +17,6 @@ export const appRoutes: Routes = [
   {path: 'blog', component: BlogComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
+  {path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

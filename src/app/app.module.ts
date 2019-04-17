@@ -17,6 +17,9 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
 import {ProjectService} from './_services/project.service';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-detail.resolver';
+import {AuthenticationService} from './_services/authentication.service';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import {AuthGuard} from './_guards/auth.guard';
 
 
 @NgModule({
@@ -29,7 +32,8 @@ import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-deta
     ProjectsComponent,
     ContactComponent,
     ProjectCardComponent,
-    ProjectDetailComponent
+    ProjectDetailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,7 @@ import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-deta
     AlertModule.forRoot(),
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [ProjectService, ProjectDetailResolver],
+  providers: [ProjectService, AuthenticationService, ProjectDetailResolver, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
