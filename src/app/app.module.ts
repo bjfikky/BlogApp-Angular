@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { CarouselModule } from 'ngx-bootstrap';
+import {AlertModule, CarouselModule} from 'ngx-bootstrap';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 
@@ -17,8 +17,6 @@ import { ProjectCardComponent } from './projects/project-card/project-card.compo
 import {ProjectService} from './_services/project.service';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-detail.resolver';
-
-
 
 
 @NgModule({
@@ -38,7 +36,8 @@ import {ProjectDetailResolver} from './_resolvers/project-resolvers/project-deta
     HttpClientModule,
     FormsModule,
     CarouselModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    AlertModule.forRoot(),
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [ProjectService, ProjectDetailResolver],
   bootstrap: [AppComponent]

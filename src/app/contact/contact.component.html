@@ -25,6 +25,12 @@
                 [(ngModel)]="message.Body" #contactMessage="ngModel"></textarea>
       <span class="text-danger" *ngIf="!contactMessage.valid &&  contactMessage.touched"><small>* Please enter your message</small></span>
     </div>
-    <input [disabled]="!contactForm.valid" type="submit" value="Send Message" class="form-control btn btn-outline-success"/>
+    <input [disabled]="!contactForm.valid" [class.disabled]="!contactForm.valid" type="submit" value="Send Message" class="form-control btn btn-outline-success"/>
   </form>
+  <alert type="success" *ngIf="success == true" class="alert" dismissible="dismissible">
+    Your message was <strong>sent!</strong> Give me 48 hours to reply. Thank you.
+  </alert>
+  <alert type="danger" *ngIf="success == false" class="alert" dismissible="dismissible">
+    <strong>Oh snap!</strong> Message sending failed. Please try again.
+  </alert>
 </div>
