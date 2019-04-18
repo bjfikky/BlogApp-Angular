@@ -12,9 +12,9 @@
   <tbody>
   <tr *ngFor="let project of projects, let i = index">
     <th scope="row">{{i + 1}}</th>
-    <td>{{project.Title}}</td>
-    <td>{{project.Tools}}</td>
-    <td>{{project.DatePosted | date:'MMM dd, yyyy'}}</td>
+    <td><strong>{{project.Title}}</strong></td>
+    <td><small>{{project.Tools}}</small></td>
+    <td><small>{{project.DatePosted | date:'MMM dd, yyyy'}}</small></td>
     <td>Edit | Delete</td>
   </tr>
   </tbody>

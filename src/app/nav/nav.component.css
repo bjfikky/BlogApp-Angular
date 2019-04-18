@@ -1,6 +1,9 @@
 h5 a:hover {
   text-decoration: none;
 }
-nav a .active {
-  text-decoration: underline;
+.active {
+  border-bottom: 1px solid black;
+}
+a.text-dark:focus, a.text-dark:hover {
+  text-decoration: none !important;
 }

@@ -16,7 +16,8 @@ import {DashMessagesComponent} from './dashboard/dash-messages/dash-messages.com
 
 export const appRoutes: Routes = [
   // ANONYMOUS USER ROUTES
-  {path: '', component: HomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'home', component: HomeComponent},
   {path: 'projects', component: ProjectsComponent},
   {path: 'projects/:id', component: ProjectDetailComponent, resolve: {project: ProjectDetailResolver}},
   {path: 'blog', component: BlogComponent},
