@@ -24,6 +24,7 @@ import { DashProjectComponent } from './dashboard/dash-project/dash-project.comp
 import { DashOverviewComponent } from './dashboard/dash-overview/dash-overview.component';
 import { DashBlogComponent } from './dashboard/dash-blog/dash-blog.component';
 import { DashMessagesComponent } from './dashboard/dash-messages/dash-messages.component';
+import { DashProjectsListComponent } from './dashboard/dash-project/dash-projects-list/dash-projects-list.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { DashMessagesComponent } from './dashboard/dash-messages/dash-messages.c
     DashProjectComponent,
     DashOverviewComponent,
     DashBlogComponent,
-    DashMessagesComponent
+    DashMessagesComponent,
+    DashProjectsListComponent
   ],
   imports: [
     BrowserModule,

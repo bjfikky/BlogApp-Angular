@@ -1,0 +1,21 @@
+<h4>Projects</h4>
+<table class="table table-striped mt-4">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Title</th>
+    <th scope="col">Tools</th>
+    <th scope="col">Date</th>
+    <th scope="col">Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let project of projects, let i = index">
+    <th scope="row">{{i + 1}}</th>
+    <td>{{project.Title}}</td>
+    <td>{{project.Tools}}</td>
+    <td>{{project.DatePosted | date:'MMM dd, yyyy'}}</td>
+    <td>Edit | Delete</td>
+  </tr>
+  </tbody>
+</table>

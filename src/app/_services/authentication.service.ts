@@ -7,6 +7,6 @@ export class AuthenticationService {
 
   constructor() { }
   getAuth() {
-    return false;
+    return true;
   }
 }
