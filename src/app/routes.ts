@@ -36,7 +36,7 @@ export const appRoutes: Routes = [
       {path: 'messages', component: DashMessagesComponent},
     ]
   },
-  // {path: 'dashboard/projects', component: DashProjectComponent, canActivate: [AuthGuard] },
 
+  // Redirect to Homepage when route does not exist
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

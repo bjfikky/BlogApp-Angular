@@ -18,4 +18,8 @@ export class ProjectService {
   getProject(id): Observable<Project> {
     return this.http.get<Project>(this.baseUrl + id);
   }
+
+  postPoroject(project: Project) {
+    return this.http.post(this.baseUrl, project);
+  }
 }

@@ -1,10 +1,10 @@
 export class Project {
-  Id: number;
+  readonly Id?: number;
   Title: string;
   Description: string;
-  Photos: string[];
+  Photos?: string[];
   Tools: string;
-  GithubURL: string;
-  YoutubeURL: string;
-  DatePosted: Date;
+  GithubURL?: string;
+  YoutubeURL?: string;
+  readonly DatePosted?: Date;
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit, Output} from '@angular/core';
 import {Project} from '../../../_models/project';
 import {ProjectService} from '../../../_services/project.service';
 
