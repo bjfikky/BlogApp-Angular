@@ -15,11 +15,15 @@ export class ProjectService {
     return this.http.get<Project[]>(this.baseUrl);
   }
 
-  getProject(id): Observable<Project> {
+  getProject(id: string): Observable<Project> {
     return this.http.get<Project>(this.baseUrl + id);
   }
 
-  postPoroject(project: Project) {
+  postProject(project: Project) {
     return this.http.post(this.baseUrl, project);
+  }
+
+  deleteProject(id: number) {
+    return this.http.delete(this.baseUrl + id);
   }
 }

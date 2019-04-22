@@ -15,7 +15,7 @@
     <td><strong>{{project.Title}}</strong></td>
     <td><small>{{project.Tools}}</small></td>
     <td><small>{{project.DatePosted | date:'MMM dd, yyyy'}}</small></td>
-    <td>Edit | Delete</td>
+    <td><small>Edit | <span class="text-danger delete-link" (click)="deleteProject(project)">Delete</span></small></td>
   </tr>
   </tbody>
 </table>

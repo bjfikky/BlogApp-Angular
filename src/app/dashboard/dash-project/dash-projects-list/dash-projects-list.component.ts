@@ -23,4 +23,13 @@ export class DashProjectsListComponent implements OnInit {
       console.log(error);
     });
   }
+
+  deleteProject(project: Project) {
+    this.projectService.deleteProject(project.Id).subscribe(() => {
+      console.log('deleted');
+      this.loadProjects();
+    }, error => {
+      console.log('delete failed', error);
+    });
+  }
 }

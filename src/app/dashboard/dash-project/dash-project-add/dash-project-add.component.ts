@@ -22,7 +22,7 @@ export class DashProjectAddComponent implements OnInit {
 
   addProject() {
     if (this.projectAddFrom.valid) {
-      this.projectService.postPoroject(this.project).subscribe(() => {
+      this.projectService.postProject(this.project).subscribe(() => {
         console.log('success');
       }, error => {
         this.error = error.error.ModelState;

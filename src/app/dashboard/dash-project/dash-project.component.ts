@@ -1,5 +1,4 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ProjectService} from '../../_services/project.service';
 import {DashProjectsListComponent} from './dash-projects-list/dash-projects-list.component';
 
 @Component({

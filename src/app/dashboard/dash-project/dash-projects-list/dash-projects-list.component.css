@@ -1,0 +1,7 @@
+.delete-link {
+  cursor: pointer;
+}
+.delete-link:hover {
+  text-decoration: underline;
+  color: #b40000 !important;
+}
