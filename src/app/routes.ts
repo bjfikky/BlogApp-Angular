@@ -13,6 +13,7 @@ import {DashProjectComponent} from './dashboard/dash-project/dash-project.compon
 import {DashOverviewComponent} from './dashboard/dash-overview/dash-overview.component';
 import {DashBlogComponent} from './dashboard/dash-blog/dash-blog.component';
 import {DashMessagesComponent} from './dashboard/dash-messages/dash-messages.component';
+import {DashProjectEditComponent} from './dashboard/dash-project/dash-project-edit/dash-project-edit.component';
 
 export const appRoutes: Routes = [
   // ANONYMOUS USER ROUTES
@@ -31,6 +32,7 @@ export const appRoutes: Routes = [
     children: [
       {path: '', redirectTo: 'overview', pathMatch: 'full'},
       {path: 'projects', component: DashProjectComponent},
+      {path: 'projects/:id/edit', component: DashProjectEditComponent},
       {path: 'overview', component: DashOverviewComponent},
       {path: 'blog', component: DashBlogComponent},
       {path: 'messages', component: DashMessagesComponent},
