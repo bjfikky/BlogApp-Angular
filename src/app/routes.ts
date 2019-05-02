@@ -32,7 +32,7 @@ export const appRoutes: Routes = [
     children: [
       {path: '', redirectTo: 'overview', pathMatch: 'full'},
       {path: 'projects', component: DashProjectComponent},
-      {path: 'projects/:id/edit', component: DashProjectEditComponent},
+      {path: 'projects/:id/edit', component: DashProjectEditComponent, resolve: {project: ProjectDetailResolver}},
       {path: 'overview', component: DashOverviewComponent},
       {path: 'blog', component: DashBlogComponent},
       {path: 'messages', component: DashMessagesComponent},

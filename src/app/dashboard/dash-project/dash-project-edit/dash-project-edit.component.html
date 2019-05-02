@@ -1,3 +1,41 @@
-<p>
-  dash-project-edit works!
-</p>
+<h4>Add New Project</h4>
+<div class="add-project">
+  <form class="mt-4" (ngSubmit)="updateProject()" #projectEditForm="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title:</label>
+      <input type="text"
+             name="title"
+             class="form-control"
+             id="exampleInputEmail1"
+             aria-describedby="emailHelp"
+             placeholder="Project title"
+             [(ngModel)]="project.Title"
+      >
+      <!--      <div *ngIf="error"><span class="text-danger">{{error.Title}}</span></div>-->
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Tools:</label>
+      <input type="text" class="form-control"
+             name="tools"
+             id="exampleInputPassword1"
+             placeholder="Java, Spring MVC, ReactJS"
+             [(ngModel)]="project.Tools"
+      >
+      <small id="toolsHelp" class="form-text text-muted"><strong>NOTE - </strong>Each tool should be separated by commas. Example: "Java, Spring MVC, ReactJS"</small>
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" rows="6" name="description"
+                placeholder="Project description" [(ngModel)]="project.Description">
+      </textarea>
+    </div>
+    <!--    <div class="form-group form-check">-->
+    <!--      <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+    <!--      <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
+    <!--    </div>-->
+    <div class="action-buttons">
+      <button type="submit" class="btn btn-outline-success">Save changes</button>
+      <button type="reset" class="btn btn-outline-warning">Clear All</button>
+    </div>
+  </form>
+</div>

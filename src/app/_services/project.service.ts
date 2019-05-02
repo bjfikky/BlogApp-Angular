@@ -23,6 +23,10 @@ export class ProjectService {
     return this.http.post(this.baseUrl, project);
   }
 
+  putProject(project: Project) {
+    return this.http.put(this.baseUrl + project.Id, project);
+  }
+
   deleteProject(id: number) {
     return this.http.delete(this.baseUrl + id);
   }

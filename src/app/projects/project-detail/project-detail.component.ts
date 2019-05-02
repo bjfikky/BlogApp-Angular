@@ -13,10 +13,10 @@ export class ProjectDetailComponent implements OnInit {
   constructor(private projectService: ProjectService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.loadUser();
+    this.loadProject();
   }
 
-  loadUser() {
+  loadProject() {
     this.route.data.subscribe(data => {
       this.project = data.project;
     });
