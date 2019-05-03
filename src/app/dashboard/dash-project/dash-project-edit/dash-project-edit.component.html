@@ -1,5 +1,8 @@
-<h4>Add New Project</h4>
+<h4>Update Project</h4>
 <div class="add-project">
+  <alert type="success" *ngIf="isUpdated" dismissible="dismissible" (onClose)="isUpdated = false">
+    <strong>Project Updated!</strong> You successfully read this important alert message.
+  </alert>
   <form class="mt-4" (ngSubmit)="updateProject()" #projectEditForm="ngForm">
     <div class="form-group">
       <label for="exampleInputEmail1">Title:</label>
@@ -35,7 +38,7 @@
     <!--    </div>-->
     <div class="action-buttons">
       <button type="submit" class="btn btn-outline-success">Save changes</button>
-      <button type="reset" class="btn btn-outline-warning">Clear All</button>
+      <button type="reset" class="btn btn-outline-danger">Clear All</button>
     </div>
   </form>
 </div>

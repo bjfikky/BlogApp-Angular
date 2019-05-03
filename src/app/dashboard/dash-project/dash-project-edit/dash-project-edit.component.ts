@@ -11,8 +11,9 @@ import {NgForm} from '@angular/forms';
 })
 export class DashProjectEditComponent implements OnInit {
   project: Project;
-  @ViewChild('projectEditForm') projectEditFrom: NgForm;
+  @ViewChild('projectEditForm') projectEditForm: NgForm;
   error: any;
+  isUpdated: boolean = null;
   constructor(private projectService: ProjectService, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -24,9 +25,12 @@ export class DashProjectEditComponent implements OnInit {
     });
   }
   updateProject() {
-    if (this.projectEditFrom.valid) {
+    this.isUpdated = null;
+    if (this.projectEditForm.valid) {
       this.projectService.putProject(this.project).subscribe(() => {
-        console.log('success');
+        console.log(this.project);
+        this.isUpdated = true;
+        this.projectEditForm.reset(this.projectEditForm.value);
       }, error => {
         this.error = error.error.ModelState;
         console.log('error occurred', this.error);
