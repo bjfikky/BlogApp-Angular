@@ -2,6 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {Auth} from '../_models/auth';
 import {AuthenticationService} from '../_services/authentication.service';
 import {NgForm} from '@angular/forms';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   errorDescription: string = null;
   auth: Auth = { Username: '', Password: '' };
   @ViewChild('loginForm') loginForm: NgForm;
-  constructor(private authenticationService: AuthenticationService) { }
+  constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -30,6 +31,8 @@ export class LoginComponent implements OnInit {
     }, (response) => {
       this.error = true;
       this.errorDescription = response.error.error_description;
+    }, () => {
+      this.router.navigate(['/dashboard']);
     });
   }
 }

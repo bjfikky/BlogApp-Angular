@@ -6,7 +6,7 @@
     <a class="p-2 text-dark" [routerLink]="['/blog']" routerLinkActive="active">Blog</a>
     <a class="p-2 text-dark" [routerLink]="['/about']" routerLinkActive="active">About</a>
     <a class="p-2 text-dark" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
-    <a *ngIf="getAuth()" class="p-2 text-dark" [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
+    <a *ngIf="isLoggedIn()" class="p-2 text-dark" [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a>
   </nav>
 <!--  <a class="btn btn-outline-primary" href="#">Sign up</a>-->
 </div>

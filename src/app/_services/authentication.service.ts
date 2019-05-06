@@ -7,14 +7,13 @@ import {map} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  baseUrl = 'http://localhost:53974/';
   constructor(private http: HttpClient) { }
-  getAuth() {
-    return true;
+  baseUrl = 'http://localhost:53974/';
+  isLoggedIn() {
+    const token = localStorage.getItem('token');
+    return !!token;
   }
   login(auth: Auth) {
-    console.log('here');
-
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
 
@@ -26,9 +25,14 @@ export class AuthenticationService {
     return this.http.post(this.baseUrl + 'token', params.toString(), {headers}).pipe(
       map((token: any) => {
         if (token) {
+          console.log(token);
           localStorage.setItem('token', token);
         }
       })
     );
+  }
+  logout() {
+    localStorage.removeItem('token');
+    console.log('logged out');
   }
 }
