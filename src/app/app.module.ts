@@ -27,6 +27,7 @@ import { DashMessagesComponent } from './dashboard/dash-messages/dash-messages.c
 import { DashProjectsListComponent } from './dashboard/dash-project/dash-projects-list/dash-projects-list.component';
 import { DashProjectAddComponent } from './dashboard/dash-project/dash-project-add/dash-project-add.component';
 import { DashProjectEditComponent } from './dashboard/dash-project/dash-project-edit/dash-project-edit.component';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import { DashProjectEditComponent } from './dashboard/dash-project/dash-project-
     DashMessagesComponent,
     DashProjectsListComponent,
     DashProjectAddComponent,
-    DashProjectEditComponent
+    DashProjectEditComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import {DashOverviewComponent} from './dashboard/dash-overview/dash-overview.com
 import {DashBlogComponent} from './dashboard/dash-blog/dash-blog.component';
 import {DashMessagesComponent} from './dashboard/dash-messages/dash-messages.component';
 import {DashProjectEditComponent} from './dashboard/dash-project/dash-project-edit/dash-project-edit.component';
+import {LoginComponent} from './login/login.component';
 
 export const appRoutes: Routes = [
   // ANONYMOUS USER ROUTES
@@ -38,7 +39,7 @@ export const appRoutes: Routes = [
       {path: 'messages', component: DashMessagesComponent},
     ]
   },
-
+  {path: 'dashboard/login', component: LoginComponent},
   // Redirect to Homepage when route does not exist
   {path: '**', redirectTo: 'home', pathMatch: 'full'}
 ];

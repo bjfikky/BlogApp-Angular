@@ -9,9 +9,7 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./dash-project-add.component.css']
 })
 export class DashProjectAddComponent implements OnInit {
-  project: Project = {
-    Description: '', Title: '', Tools: ''
-  };
+  project: Project = new Project();
   error: any;
   @ViewChild('projectAddForm') projectAddFrom: NgForm;
 
