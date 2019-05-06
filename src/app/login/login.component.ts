@@ -14,9 +14,13 @@ export class LoginComponent implements OnInit {
   errorDescription: string = null;
   auth: Auth = { Username: '', Password: '' };
   @ViewChild('loginForm') loginForm: NgForm;
+
   constructor(private authenticationService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
+    if (this.authenticationService.isLoggedIn()) {
+      this.router.navigate(['/dashboard']);
+    }
   }
 
   login() {

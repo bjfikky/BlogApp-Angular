@@ -2,17 +2,21 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Auth} from '../_models/auth';
 import {map} from 'rxjs/operators';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
+  baseUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) { }
-  baseUrl = 'http://localhost:53974/';
+
   isLoggedIn() {
     const token = localStorage.getItem('token');
     return !!token;
   }
+
   login(auth: Auth) {
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/x-www-form-urlencoded');
@@ -31,6 +35,7 @@ export class AuthenticationService {
       })
     );
   }
+
   logout() {
     localStorage.removeItem('token');
     console.log('logged out');

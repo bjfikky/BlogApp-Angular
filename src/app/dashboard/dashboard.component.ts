@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
+
   logout() {
     this.authenticationService.logout();
     this.router.navigate(['/home']);
