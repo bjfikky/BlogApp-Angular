@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Project} from '../_models/project';
 import {environment} from '../../environments/environment';
@@ -9,6 +9,7 @@ import {environment} from '../../environments/environment';
 })
 export class ProjectService {
   baseUrl = `${environment.apiUrl}api/projects/`;
+  token: any = JSON.parse(localStorage.getItem('token'));
 
   constructor(private http: HttpClient) { }
 
@@ -29,6 +30,10 @@ export class ProjectService {
   }
 
   deleteProject(id: number) {
-    return this.http.delete(this.baseUrl + id);
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${this.token.access_token}`
+    });
+
+    return this.http.delete(this.baseUrl + id, {headers});
   }
 }

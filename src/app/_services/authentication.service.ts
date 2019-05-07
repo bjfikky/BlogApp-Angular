@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Auth} from '../_models/auth';
 import {map} from 'rxjs/operators';
 import {environment} from '../../environments/environment';
@@ -18,8 +18,9 @@ export class AuthenticationService {
   }
 
   login(auth: Auth) {
-    const headers = new HttpHeaders();
-    headers.append('Content-Type', 'application/x-www-form-urlencoded');
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    });
 
     const params = new URLSearchParams();
     params.set('grant_type', 'password');
@@ -30,7 +31,7 @@ export class AuthenticationService {
       map((token: any) => {
         if (token) {
           console.log(token);
-          localStorage.setItem('token', token);
+          localStorage.setItem('token', JSON.stringify(token));
         }
       })
     );
