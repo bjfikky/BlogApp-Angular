@@ -10,6 +10,9 @@ import {environment} from '../../environments/environment';
 export class ProjectService {
   baseUrl = `${environment.apiUrl}api/projects/`;
   token: any = JSON.parse(localStorage.getItem('token'));
+  headers = new HttpHeaders({
+    Authorization: `Bearer ${this.token.access_token}`
+  });
 
   constructor(private http: HttpClient) { }
 
@@ -22,18 +25,14 @@ export class ProjectService {
   }
 
   postProject(project: Project) {
-    return this.http.post(this.baseUrl, project);
+    return this.http.post(this.baseUrl, project, {headers: this.headers});
   }
 
   putProject(project: Project) {
-    return this.http.put(this.baseUrl + project.Id, project);
+    return this.http.put(this.baseUrl + project.Id, project, {headers: this.headers});
   }
 
   deleteProject(id: number) {
-    const headers = new HttpHeaders({
-      Authorization: `Bearer ${this.token.access_token}`
-    });
-
-    return this.http.delete(this.baseUrl + id, {headers});
+    return this.http.delete(this.baseUrl + id, {headers: this.headers});
   }
 }
